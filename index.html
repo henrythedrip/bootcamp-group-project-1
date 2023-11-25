@@ -4,6 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzc69XmD4DeT9-Te5GUZ-_6BwQgIyvkNw&callback=console.debug&libraries=maps,marker&v=beta">
+        </script>
     <link rel="stylesheet" href="./assets/style.css">
     <title>Group Project 1</title>
 </head>
@@ -12,32 +15,16 @@
     <header class="header">
         <h1 class="headline">Group Project 1</h1>
         <nav class="button-container">
-            <a href="#button1"><button class="button">Button1</button></a>
+            <a href="#map"><button class="button">Map</button></a>
             <a href="#button2"><button class="button">Button2</button></a>
             <a href="#button3"><button class="button">Button3</button></a>
         </nav>
     </header>
     <main>
-        <h2>Article Title</h2>
-        <p>Ladies and gentlemen, esteemed instructors, and my fellow coding enthusiasts,
-
-            Today marks a significant milestone in our coding journey – our first group project at this incredible coding bootcamp. As we stand on the cusp of innovation and endless possibilities, I want to take a moment to reflect on the remarkable journey we've embarked upon together.
-            
-            We came into this bootcamp as individuals, each with our unique backgrounds, aspirations, and dreams. Some of us had coding experience, while others were novices eager to grasp the intricacies of this digital realm. Yet, here we are, united by a common purpose – the pursuit of knowledge, the passion for coding, and the determination to build something extraordinary.
-            
-            Our first group project is a canvas of endless opportunities. It's a chance for us to unleash our creativity, push our boundaries, and showcase the skills we've cultivated over the past weeks. As we dive into the world of coding collaboration, remember that this experience is more than just lines of code or building an application. It's about teamwork, problem-solving, and the collective spirit that transforms challenges into triumphs.
-            
-            In this realm of coding, mistakes aren't setbacks; they're stepping stones to success. Embrace the bugs, relish the errors, for they are the footprints of growth. It's through overcoming challenges that we truly learn, adapt, and evolve. As we embark on this group project, let's not fear failure but embrace it as an integral part of our journey toward mastery.
-            
-            Each one of you brings a unique set of skills, perspectives, and strengths to the table. Together, we form a formidable team capable of conquering any coding challenge. Collaboration is the heartbeat of innovation, and it's within the synergy of our diverse talents that our project will come to life. Remember, the magic happens when we combine our individual sparks to create a blazing fire of creativity and functionality.
-            
-            As we navigate the complexities of coding, let's not forget the bigger picture. Beyond the syntax and algorithms lies the potential to make a real impact. Our code has the power to solve problems, enhance lives, and shape the future. So, as you delve into your projects, ask yourselves not just what you are building, but why you are building it. Infuse your creation with purpose and let it be a testament to the incredible potential that resides within each of you.
-            
-            In the next few weeks, there will be moments of frustration, challenges that seem insurmountable, and lines of code that refuse to cooperate. But remember, you are not alone. Your fellow teammates are there to support you, your instructors are guiding lights, and within you resides the resilience to overcome any obstacle.
-            
-            In closing, let this group project be more than just a coding assignment. Let it be a manifestation of your passion, creativity, and the collective strength of this amazing cohort. Embrace the challenges, learn from the setbacks, and celebrate the victories, no matter how small. This is not just a project; it's a testament to your growth, your dedication, and the incredible journey that lies ahead.
-            
-            So, my fellow coders, let's code with purpose, collaborate with enthusiasm, and build something extraordinary. The world is waiting to witness the magic that happens when passionate minds come together. Best of luck, and let's make this group project a masterpiece that reflects the brilliance within each and every one of you. Thank you.</p>
+        <gmp-map center="40.76509094238281,-111.84213256835938" zoom="14" map-id="DEMO_MAP_ID" id="map">
+            <gmp-advanced-marker position="40.76509094238281,-111.84213256835938" title="My location">
+            </gmp-advanced-marker>
+        </gmp-map>
     </main>
     <script src="./assets/script.js"></script>
 </body>
