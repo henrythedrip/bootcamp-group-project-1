@@ -54,7 +54,7 @@ font-size: medium;
     box-shadow: 5px 5px 5px black inset;
 }
 
-main {
+.map-section {
     display: flex;
     justify-content: center;
 }
@@ -82,4 +82,15 @@ main {
       text-align: center;
       padding-bottom: 10px;
     }
+    }
+
+    .group-members {
+        display: flex;
+        justify-content: center;
+        flex-direction: row;
+        padding: 5vh;   
+    }
+
+    .group-members h2 {
+        padding: 4vh;
     }
