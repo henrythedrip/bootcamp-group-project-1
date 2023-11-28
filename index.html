@@ -1,56 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async
-        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzc69XmD4DeT9-Te5GUZ-_6BwQgIyvkNw&callback=console.debug&libraries=maps,marker&v=beta">
-        </script>
-    <link rel="stylesheet" href="./assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      async
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDzc69XmD4DeT9-Te5GUZ-_6BwQgIyvkNw&callback=console.debug&libraries=maps,marker&v=beta"
+    ></script>
+    <link rel="stylesheet" href="./assets/style.css" />
     <title>Group Project 1</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <header class="header">
-        <h1 class="headline">Group Project 1</h1>
-        <nav class="button-container">
-            <a href="#map"><button class="button">Map</button></a>
-            <a href="#group-members"><button class="button">Group</button></a>
-            <a href="#button3"><button class="button">Button3</button></a>
-        </nav>
+      <h1 class="headline">Group Project 1</h1>
+      <nav class="button-container">
+        <a href="#map"><button class="button">Map</button></a>
+        <a href="#group-members"><button class="button">Group</button></a>
+        <a href="#button3"><button class="button">Button3</button></a>
+      </nav>
     </header>
     <main>
-        <section class="map-section">
-        <gmp-map center="40.76103973388672,-111.87799835205078" zoom="14" map-id="DEMO_MAP_ID" id="map">
-            <gmp-advanced-marker position="40.76509094238281,-111.84213256835938" title="My location">
-            </gmp-advanced-marker>
-            <gmp-advanced-marker position="40.74976348876953,-111.86538696289062" title="My location">
-            </gmp-advanced-marker>
-            <gmp-advanced-marker position="40.76545333862305,-111.86117553710938" title="My location">
-            </gmp-advanced-marker>
-            <gmp-advanced-marker position="40.760536193847656,-111.87846374511719" title="My location">
-            </gmp-advanced-marker>
-            <gmp-advanced-marker position="40.769466400146484,-111.90396118164062" title="My location">
-            </gmp-advanced-marker>
+      <section class="map-section">
+        <gmp-map
+          center="40.76103973388672,-111.87799835205078"
+          zoom="14"
+          map-id="DEMO_MAP_ID"
+          id="map"
+        >
+          <gmp-advanced-marker
+            position="40.76509094238281,-111.84213256835938"
+            title="My location"
+          >
+          </gmp-advanced-marker>
+          <gmp-advanced-marker
+            position="40.74976348876953,-111.86538696289062"
+            title="My location"
+          >
+          </gmp-advanced-marker>
+          <gmp-advanced-marker
+            position="40.76545333862305,-111.86117553710938"
+            title="My location"
+          >
+          </gmp-advanced-marker>
+          <gmp-advanced-marker
+            position="40.760536193847656,-111.87846374511719"
+            title="My location"
+          >
+          </gmp-advanced-marker>
+          <gmp-advanced-marker
+            position="40.769466400146484,-111.90396118164062"
+            title="My location"
+          >
+          </gmp-advanced-marker>
         </gmp-map>
         <div class="map-button">
-        <button class="button">Add Me</button>
+          <button id="addMeButton" class="button">Add Me</button>
+          <div id="modalForm" class="modal">
+            <div class="modal-content"></div>
+            <span class="close">&times;</span>
+            <form>
+              <h2>Create Your Profile</h2>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Your Display Name"
+              /><br />
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Your Email Address"
+              /><br />
+              <input
+                type="text"
+                name="bio"
+                id="bio"
+                placeholder="140 character bio"
+              /><br />
+            </form>
+          </div>
         </div>
-
-        </section>
-        <section class="group-members" id="group-members">
-            <h2>Group Members</h2>
-            <ul>
-                <li>Henry Thomas</li>
-                <li>Mason McNeil</li>
-                <li>Maxwell Kaufman</li>
-                <li>Paul Orozco</li>
-                <li>Ryan Darton</li>
-            </ul>
-        </section>
+      </section>
+      <section class="group-members" id="group-members">
+        <h2>Group Members</h2>
+        <ul>
+          <li>Henry Thomas</li>
+          <li>Mason McNeil</li>
+          <li>Maxwell Kaufman</li>
+          <li>Paul Orozco</li>
+          <li>Ryan Darton</li>
+        </ul>
+      </section>
     </main>
     <script src="./assets/script.js"></script>
-</body>
-
+  </body>
 </html>
