@@ -22,64 +22,26 @@
     </header>
     <main>
       <section class="map-section">
-        <gmp-map
-          center="40.76103973388672,-111.87799835205078"
-          zoom="14"
-          map-id="DEMO_MAP_ID"
-          id="map"
-        >
-          <gmp-advanced-marker
-            position="40.76509094238281,-111.84213256835938"
-            title="My location"
-          >
-          </gmp-advanced-marker>
-          <gmp-advanced-marker
-            position="40.74976348876953,-111.86538696289062"
-            title="My location"
-          >
-          </gmp-advanced-marker>
-          <gmp-advanced-marker
-            position="40.76545333862305,-111.86117553710938"
-            title="My location"
-          >
-          </gmp-advanced-marker>
-          <gmp-advanced-marker
-            position="40.760536193847656,-111.87846374511719"
-            title="My location"
-          >
-          </gmp-advanced-marker>
-          <gmp-advanced-marker
-            position="40.769466400146484,-111.90396118164062"
-            title="My location"
-          >
-          </gmp-advanced-marker>
+        <gmp-map center="40.76103973388672,-111.87799835205078" zoom="14" map-id="DEMO_MAP_ID" id="map">
+          <gmp-advanced-marker position="40.76509094238281,-111.84213256835938" title="My location"> </gmp-advanced-marker>
+          <gmp-advanced-marker position="40.74976348876953,-111.86538696289062" title="My location"> </gmp-advanced-marker>
+          <gmp-advanced-marker position="40.76545333862305,-111.86117553710938" title="My location"> </gmp-advanced-marker>
+          <gmp-advanced-marker position="40.760536193847656,-111.87846374511719" title="My location"> </gmp-advanced-marker>
+          <gmp-advanced-marker position="40.769466400146484,-111.90396118164062" title="My location"> </gmp-advanced-marker>
         </gmp-map>
         <div class="map-button">
           <button id="addMeButton" class="button">Add Me</button>
           <div id="modalForm" class="modal">
-            <div class="modal-content"></div>
-            <span class="close">&times;</span>
-            <form>
-              <h2>Create Your Profile</h2>
-              <input
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Your Display Name"
-              /><br />
-              <input
-                type="email"
-                name="email"
-                id="email"
-                placeholder="Your Email Address"
-              /><br />
-              <input
-                type="text"
-                name="bio"
-                id="bio"
-                placeholder="140 character bio"
-              /><br />
-            </form>
+            <div class="modal-content">
+              <span class="close">&times;</span>
+              <form>
+                <h3 class="form-header">Create Your Profile</h3>
+                <input type="text" name="name" id="name" placeholder="Your Display Name" /><br />
+                <input type="email" name="email" id="email" placeholder="Your Email Address" /><br />
+                <input type="textarea" name="bio" id="bio" placeholder="140 character bio" /><br />
+                <div class="buttonRow"><button class="button" id="Submit">Submit</button></div>
+              </form>
+            </div>
           </div>
         </div>
       </section>

@@ -30,6 +30,11 @@ body {
   border-radius: 50px;
 }
 
+.button-row button {
+  display: flex;
+  justify-content: space-around;
+}
+
 .button-container {
   display: flex;
   margin: var(--border);
@@ -40,6 +45,11 @@ body {
   width: 5rem;
   height: 5rem;
   border-radius: 5rem;
+}
+
+#bio {
+  height: 10rem;
+  overflow: auto;
 }
 
 .button {
@@ -94,14 +104,26 @@ body {
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
-  width: 80%;
+  min-width: 15rem;
+  width: fit-content;
+}
+
+.form-header {
+  margin: 0 0 1rem 0;
+}
+
+input {
+  margin: 5px 0;
+  font-size: 1rem;
 }
 
 .close {
   color: #aaa;
   float: right;
+  top: 2rem;
   font-size: 28px;
   font-weight: bold;
+  transform: translate(13px, -24px);
 }
 .close:hover,
 .close:focus {
