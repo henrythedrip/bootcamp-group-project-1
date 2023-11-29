@@ -1,6 +1,9 @@
 // Group Project 1 api:
 // AIzaSyDzc69XmD4DeT9-Te5GUZ-_6BwQgIyvkNw
 // Get the modal
+var inputEmail = document.getElementById("email");
+var inputName = document.getElementById("name");
+var inputBio = document.getElementById("bio");
 var modal = document.getElementById("modalForm");
 // Get the button that opens the modal
 var btn = document.getElementById("addMeButton");
