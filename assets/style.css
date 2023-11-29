@@ -1,164 +1,167 @@
 * {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 :root {
-  --brown: #2e2e30;
-  --tan: #b1a296;
-  --orange: #703e3e;
-  --shadow: #5e2411;
-  --white: #fff6f0;
-  --border: 10px;
+    --brown: #2e2e30;
+    --tan: #b1a296;
+    --orange: #703e3e;
+    --shadow: #5e2411;
+    --white: #fff6f0;
+    --border: 10px;
 }
 
 body {
-  font-family: Helvetica, Arial, sans-serif;
-  background-color: var(--tan);
-  color: var(--brown);
+    font-family: Helvetica, Arial, sans-serif;
+    background-color: var(--tan);
+    color: var(--brown);
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: var(--border);
-  padding: var(--border);
-  border: 15px solid var(--orange);
-  background-color: var(--tan);
-  border-radius: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: var(--border);
+    padding: var(--border);
+    border: 15px solid var(--orange);
+    background-color: var(--tan);
+    border-radius: 50px;
 }
 
 .button-row button {
-  display: flex;
-  justify-content: space-around;
+    display: flex;
+    justify-content: space-around;
 }
 
 .button-container {
-  display: flex;
-  margin: var(--border);
-  gap: 30px;
+    display: flex;
+    margin: var(--border);
+    gap: 30px;
 }
 
 .map-section button {
-  width: 5rem;
-  height: 5rem;
-  border-radius: 5rem;
+    width: 5rem;
+    height: 5rem;
+    border-radius: 5rem;
 }
 
 #bio {
-  height: 10rem;
-  overflow: auto;
+    height: 10rem;
+    overflow: auto;
 }
 
 .button {
-  padding: var(--border);
-  width: 80px;
-  background-color: var(--orange);
-  color: var(--white);
-  border-radius: 50px;
-  font-size: medium;
+    padding: var(--border);
+    width: 80px;
+    background-color: var(--orange);
+    color: var(--white);
+    border-radius: 50px;
+    font-size: medium;
 }
 
 .button:hover {
-  background-color: var(--brown);
-  box-shadow: 5px 8px 3px gray;
+    background-color: var(--brown);
+    box-shadow: 5px 8px 3px gray;
 }
 
 .button:active {
-  box-shadow: 5px 5px 5px black inset;
+    box-shadow: 5px 5px 5px black inset;
 }
 
 .map-section {
-  display: flex;
-  justify-content: center;
-  position: relative;
+    display: flex;
+    justify-content: center;
+    position: relative;
 }
 
 .map-button {
-  position: absolute;
-  right: 4vw;
-  top: 7vh;
-  display: flex;
+    position: absolute;
+    right: 4vw;
+    top: 7vh;
+    display: flex;
 }
 
 #map {
-  height: 100vh;
-  width: 95vw;
+    height: 100vh;
+    width: 95vw;
 }
+
 .modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
+
 .modal-content {
-  background-color: #fefefe;
-  margin: 15% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  min-width: 15rem;
-  width: fit-content;
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    min-width: 15rem;
+    width: fit-content;
 }
 
 .form-header {
-  margin: 0 0 1rem 0;
+    margin: 0 0 1rem 0;
 }
 
 input {
-  margin: 5px 0;
-  font-size: 1rem;
+    margin: 5px 0;
+    font-size: 1rem;
 }
 
 .close {
-  color: #aaa;
-  float: right;
-  top: 2rem;
-  font-size: 28px;
-  font-weight: bold;
-  transform: translate(13px, -24px);
+    color: #aaa;
+    float: right;
+    top: 2rem;
+    font-size: 28px;
+    font-weight: bold;
+    transform: translate(13px, -24px);
 }
+
 .close:hover,
 .close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
 }
 
 @media screen and (max-width: 768px) {
-  .header {
-    display: block;
-    justify-content: center;
-  }
+    .header {
+        display: block;
+        justify-content: center;
+    }
 
-  .button-container {
-    display: flex;
-    justify-content: space-around;
-    width: 50%;
-    margin: 0 auto;
-    gap: 30px;
-  }
+    .button-container {
+        display: flex;
+        justify-content: space-around;
+        width: 50%;
+        margin: 0 auto;
+        gap: 30px;
+    }
 
-  header h1 {
-    text-align: center;
-    padding-bottom: 10px;
-  }
+    header h1 {
+        text-align: center;
+        padding-bottom: 10px;
+    }
 }
 
 .group-members {
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  padding: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    padding: 5vh;
 }
 
 .group-members h2 {
-  padding: 4vh;
+    padding: 4vh;
 }
