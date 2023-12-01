@@ -10,6 +10,44 @@ var span = document.getElementsByClassName('close')[0];
 // Initialize and add the map
 let map;
 
+const userData = [
+    {
+        name: "Joe Billy",
+        email: "joebilly@website.com",
+        bio: "Hey whats up?! My name is Joe Billy and I love Rock & Roll. Currently looking for a good group of individuals to drink with on the weekends. I am married and have 1 kid, so time away from my house is a needed repreve.",
+        drink: "Old Fashioned",
+        drinkUrl: "https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg",
+    },
+    {
+        name: "Big Stepper",
+        email: "bigstepper1111@website.com",
+        bio: "Hey good gang?! they call me Big Stepper and I am a devil on the mic. I been making Hip Hop for over 10 years and the women love me. Currently looking for a good group of dudes to hit my favorite bar, Lake Effect, with. Sometimes I freestyle rap there on tuesdays with the house band. Come on by and buy me a drink, esspecially if you love underground Hip Hop.",
+        drink: "Negroni",
+        drinkUrl: "https://www.thecocktaildb.com/images/media/drink/qgdu971561574065.jpg",
+    },
+    {
+        name: "Lisa Simpleton",
+        email: "lisasimpleton420@website.com",
+        bio: "Hello you sweet people! I am Lisa and I am looking for a good group of girls to have my back when the parties get wild. Love going to Bar X and Beer Bar on the weekends, because thats where the cutest guys are. If you love to have fun and hate Trump HMU!",
+        drink: "Daiquiri",
+        drinkUrl: "https://www.thecocktaildb.com/images/media/drink/mrz9091589574515.jpg",
+    },
+    {
+        name: "Betty Brown",
+        email: "bb127@website.com",
+        bio: "Sup? Betty is the name and I searching for a steller group of women that love to have fun on a night out. Love going to Johnny's On 2nd because who wants to pay for expensive drinks? I am a nurse and mother of 2. I am new to SLC, originally from Missouri. Where my southern bells at? :)",
+        drink: "Gin Tonic",
+        drinkUrl: "https://www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg",
+    },
+    {
+        name: "Richard Guu",
+        email: "guurichard@website.com",
+        bio: "Salutations! I am a foreign exchange student from China looking for a fun group of outgoing Americans to practice english with. I have lived here for 2 months and and pursing a masters degree. I am studying Art at the University of Utah, hoping to become a professor of painting before I reach the age of 30. Currently working on an art showcase about skiing. I love to hit Brighton on the weekends, although I am just a beginner.",
+        drink: "Whiskey Sour",
+        drinkUrl: "https://www.thecocktaildb.com/images/media/drink/hbkfsh1589574990.jpg",
+    },
+]
+
 async function initMap() {
   // The location of Uluru
   const position = { lat: 40.76103973388672, lng: -111.87799835205078 };
