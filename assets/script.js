@@ -17,10 +17,12 @@ const mapCenterPosition = { lat: 40.76103973388672, lng: -111.87799835205078 };
 const userData = [
   {
     name: 'Joe Billy',
-    email: 'joebilly@website.com',
-    bio: 'Hey whats up?! My name is Joe Billy and I love Rock & Roll. Currently looking for a good group of individuals to drink with on the weekends. I am married and have 1 kid, so time away from my house is a needed repreve.',
-    drink: 'Old Fashioned',
-    drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg',
+    mapInfoWindow: {
+      email: 'joebilly@website.com',
+      bio: 'Hey whats up?! My name is Joe Billy and I love Rock & Roll. Currently looking for a good group of individuals to drink with on the weekends. I am married and have 1 kid, so time away from my house is a needed repreve.',
+      drink: 'Old Fashioned',
+      drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/vrwquq1478252802.jpg',
+    },
     mapOptions: {
       map: map,
       position: { lat: 40.76509094238281, lng: -111.84213256835938 },
@@ -29,10 +31,12 @@ const userData = [
   },
   {
     name: 'Big Stepper',
-    email: 'bigstepper1111@website.com',
-    bio: 'Hey good gang?! they call me Big Stepper and I am a devil on the mic. I been making Hip Hop for over 10 years and the women love me. Currently looking for a good group of dudes to hit my favorite bar, Lake Effect, with. Sometimes I freestyle rap there on tuesdays with the house band. Come on by and buy me a drink, esspecially if you love underground Hip Hop.',
-    drink: 'Negroni',
-    drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/qgdu971561574065.jpg',
+    mapInfoWindow: {
+      email: 'bigstepper1111@website.com',
+      bio: 'Hey good gang?! they call me Big Stepper and I am a devil on the mic. I been making Hip Hop for over 10 years and the women love me. Currently looking for a good group of dudes to hit my favorite bar, Lake Effect, with. Sometimes I freestyle rap there on tuesdays with the house band. Come on by and buy me a drink, esspecially if you love underground Hip Hop.',
+      drink: 'Negroni',
+      drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/qgdu971561574065.jpg',
+    },
     mapOptions: {
       map: map,
       position: { lat: 40.74976348876953, lng: -111.86538696289062 },
@@ -41,10 +45,12 @@ const userData = [
   },
   {
     name: 'Lisa Simpleton',
-    email: 'lisasimpleton420@website.com',
-    bio: 'Hello you sweet people! I am Lisa and I am looking for a good group of girls to have my back when the parties get wild. Love going to Bar X and Beer Bar on the weekends, because thats where the cutest guys are. If you love to have fun and hate Trump HMU!',
-    drink: 'Daiquiri',
-    drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/mrz9091589574515.jpg',
+    mapInfoWindow: {
+      email: 'lisasimpleton420@website.com',
+      bio: 'Hello you sweet people! I am Lisa and I am looking for a good group of girls to have my back when the parties get wild. Love going to Bar X and Beer Bar on the weekends, because thats where the cutest guys are. If you love to have fun and hate Trump HMU!',
+      drink: 'Daiquiri',
+      drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/mrz9091589574515.jpg',
+    },
     mapOptions: {
       map: map,
       position: { lat: 40.76545333862305, lng: -111.86117553710938 },
@@ -53,10 +59,12 @@ const userData = [
   },
   {
     name: 'Betty Brown',
-    email: 'bb127@website.com',
-    bio: "Sup? Betty is the name and I searching for a steller group of women that love to have fun on a night out. Love going to Johnny's On 2nd because who wants to pay for expensive drinks? I am a nurse and mother of 2. I am new to SLC, originally from Missouri. Where my southern bells at? :)",
-    drink: 'Gin Tonic',
-    drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg',
+    mapInfoWindow: {
+      email: 'bb127@website.com',
+      bio: "Sup? Betty is the name and I searching for a steller group of women that love to have fun on a night out. Love going to Johnny's On 2nd because who wants to pay for expensive drinks? I am a nurse and mother of 2. I am new to SLC, originally from Missouri. Where my southern bells at? :)",
+      drink: 'Gin Tonic',
+      drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/qcgz0t1643821443.jpg',
+    },
     mapOptions: {
       map: map,
       position: { lat: 40.760536193847656, lng: -111.89846374511719 },
@@ -65,10 +73,12 @@ const userData = [
   },
   {
     name: 'Richard Guu',
-    email: 'guurichard@website.com',
-    bio: 'Salutations! I am a foreign exchange student from China looking for a fun group of outgoing Americans to practice english with. I have lived here for 2 months and and pursing a masters degree. I am studying Art at the University of Utah, hoping to become a professor of painting before I reach the age of 30. Currently working on an art showcase about skiing. I love to hit Brighton on the weekends, although I am just a beginner.',
-    drink: 'Whiskey Sour',
-    drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/hbkfsh1589574990.jpg',
+    mapInfoWindow: {
+      email: 'guurichard@website.com',
+      bio: 'Salutations! I am a foreign exchange student from China looking for a fun group of outgoing Americans to practice english with. I have lived here for 2 months and and pursing a masters degree. I am studying Art at the University of Utah, hoping to become a professor of painting before I reach the age of 30. Currently working on an art showcase about skiing. I love to hit Brighton on the weekends, although I am just a beginner.',
+      drink: 'Whiskey Sour',
+      drinkUrl: 'https://www.thecocktaildb.com/images/media/drink/hbkfsh1589574990.jpg',
+    },
     mapOptions: {
       map: map,
       position: { lat: 40.76536193847656, lng: -111.81246374511719 },
@@ -88,7 +98,6 @@ async function initMap() {
     mapId: 'DEMO_MAP_ID',
   });
 
-  console.log(userData[3].mapOptions);
   const marker1 = new AdvancedMarkerElement(userData[0].mapOptions);
   const marker2 = new AdvancedMarkerElement(userData[1].mapOptions);
   const marker3 = new AdvancedMarkerElement(userData[2].mapOptions);
@@ -101,6 +110,34 @@ async function initMap() {
 }
 
 initMap();
+
+//The User's marker creation
+function createUsersMarker() {
+  // the user's marker styling
+  const pinElement = new google.maps.PinElement({
+    background: '#50C878',
+    borderColor: '#FFF',
+    glyphColor: 'white',
+    scale: 1.5,
+  });
+  userData.push({
+    name: '',
+    email: '',
+    bio: '',
+    drink: '',
+    drinkUrl: '',
+    title: '',
+    mapOptions: {
+      position: mapCenterPosition,
+      map: map,
+      gmpDraggable: true,
+      title: 'You!',
+      glyphColor: 'white',
+      content: pinElement.element,
+    },
+  });
+  initMap();
+}
 
 btn.addEventListener('click', function (event) {
   event.preventDefault();
@@ -129,17 +166,13 @@ function store() {
   localStorage.setItem('name', namerInput);
   var bioInput = bio.value;
   localStorage.setItem('bio', bioInput);
-  console.log(emailInput);
-  console.log(namerInput);
-  console.log(bioInput);
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
   if ($navbarBurgers.length > 0) {
-    $navbarBurgers.forEach(el => {
+    $navbarBurgers.forEach((el) => {
       el.addEventListener('click', () => {
         const target = el.dataset.target;
         const $target = document.getElementById(target);
@@ -150,5 +183,3 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-
-
