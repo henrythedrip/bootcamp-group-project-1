@@ -10,19 +10,17 @@ var span = document.getElementsByClassName('close')[0];
 // Initialize and add the map
 let map;
 
+// Set the center coordinates in a reusable way.
 const centerPosition = { lat: 40.76103973388672, lng: -111.87799835205078 };
 async function initMap() {
-  // The location of Uluru
-  const position = centerPosition;
   // Request needed libraries.
-  //@ts-ignore
   const { Map } = await google.maps.importLibrary('maps');
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary('marker');
 
-  // The map, centered at Uluru
+  // The map
   map = new Map(document.getElementById('map'), {
     zoom: 14,
-    center: position,
+    center: centerPosition,
     mapId: 'DEMO_MAP_ID',
   });
 
@@ -59,29 +57,29 @@ async function initMap() {
     title: 'Marker 5',
   });
 
-  //The User's marker
+  // the user's marker styling
   const pinElement = new PinElement({
     background: '#50C878',
     borderColor: '#FFF',
     glyphColor: 'white',
     scale: 1.5,
   });
+  //The User's marker creation
   const usersMarker = new AdvancedMarkerElement({
     position: centerPosition,
     map: map,
     gmpDraggable: true,
     title: 'You!',
-    id: 'UsersMarker',
     glyphColor: 'white',
     content: pinElement.element,
   });
-  const content = advancedMarker.content;
+  // const content = advancedMarker.content;
 
-  content.style.opacity = '0';
-  content.addEventListener('animationed', (event) => {
-    content.classList.remove('drop');
-    content.style.opacity = '1';
-  });
+  // content.style.opacity = '0';
+  // content.addEventListener('animationed', (event) => {
+  //   content.classList.remove('drop');
+  //   content.style.opacity = '1';
+  // });
 
   // 2 second delay so that we can see the animation.
   const time = 2 + Math.random();
