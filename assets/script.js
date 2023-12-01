@@ -51,50 +51,43 @@ const userData = [
 let map;
 
 // Set the center coordinates in a reusable way.
-const centerPosition = { lat: 40.76103973388672, lng: -111.87799835205078 };
+const mapCenterPosition = { lat: 40.76103973388672, lng: -111.87799835205078 };
 
 async function initMap() {
   // Request needed libraries.
   const { Map } = await google.maps.importLibrary('maps');
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary('marker');
 
-  // The map
   map = new Map(document.getElementById('map'), {
     zoom: 14,
-    center: centerPosition,
+    center: mapCenterPosition,
     mapId: 'DEMO_MAP_ID',
   });
 
-  const position1 = { lat: 40.76509094238281, lng: -111.84213256835938 };
-  const position2 = { lat: 40.74976348876953, lng: -111.86538696289062 };
-  const position3 = { lat: 40.76545333862305, lng: -111.86117553710938 };
-  const position4 = { lat: 40.760536193847656, lng: -111.89846374511719 };
-  const position5 = { lat: 40.769466400146484, lng: -111.90396118164062 };
-
   const marker1 = new AdvancedMarkerElement({
     map: map,
-    position: position1,
+    position: { lat: 40.76509094238281, lng: -111.84213256835938 },
     title: 'Marker 1',
   });
 
   const marker2 = new AdvancedMarkerElement({
     map: map,
-    position: position2,
+    position: { lat: 40.74976348876953, lng: -111.86538696289062 },
     title: 'Marker 2',
   });
   const marker3 = new AdvancedMarkerElement({
     map: map,
-    position: position3,
+    position: { lat: 40.76545333862305, lng: -111.86117553710938 },
     title: 'Marker 3',
   });
   const marker4 = new AdvancedMarkerElement({
     map: map,
-    position: position4,
+    position: { lat: 40.760536193847656, lng: -111.89846374511719 },
     title: 'Marker 4',
   });
   const marker5 = new AdvancedMarkerElement({
     map: map,
-    position: position5,
+    position: { lat: 40.769466400146484, lng: -111.90396118164062 },
     title: 'Marker 5',
   });
 }
@@ -109,13 +102,15 @@ function createUsersMarker(map) {
     scale: 1.5,
   });
   new google.maps.AdvancedMarkerElement({
-    position: centerPosition,
+    position: mapCenterPosition,
     map: map,
     gmpDraggable: true,
     title: 'You!',
     glyphColor: 'white',
     content: pinElement.element,
   });
+
+  // SAVING THIS FOR POTENTIAL ANIMATION...
   // // const content = advancedMarker.content;
 
   // // content.style.opacity = '0';
