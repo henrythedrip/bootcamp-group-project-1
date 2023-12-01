@@ -10,13 +10,14 @@ var span = document.getElementsByClassName('close')[0];
 // Initialize and add the map
 let map;
 
+const centerPosition = { lat: 40.76103973388672, lng: -111.87799835205078 };
 async function initMap() {
   // The location of Uluru
-  const position = { lat: 40.76103973388672, lng: -111.87799835205078 };
+  const position = centerPosition;
   // Request needed libraries.
   //@ts-ignore
   const { Map } = await google.maps.importLibrary('maps');
-  const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
+  const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary('marker');
 
   // The map, centered at Uluru
   map = new Map(document.getElementById('map'), {
@@ -57,41 +58,44 @@ async function initMap() {
     position: position5,
     title: 'Marker 5',
   });
+
+  //The User's marker
+  const pinElement = new PinElement({
+    background: '#50C878',
+    borderColor: '#FFF',
+    glyphColor: 'white',
+    scale: 1.5,
+  });
+  const usersMarker = new AdvancedMarkerElement({
+    position: centerPosition,
+    map: map,
+    gmpDraggable: true,
+    title: 'You!',
+    id: 'UsersMarker',
+    glyphColor: 'white',
+    content: pinElement.element,
+  });
+  const content = advancedMarker.content;
+
+  content.style.opacity = '0';
+  content.addEventListener('animationed', (event) => {
+    content.classList.remove('drop');
+    content.style.opacity = '1';
+  });
+
+  // 2 second delay so that we can see the animation.
+  const time = 2 + Math.random();
+
+  content.style.setProperty('--delay-time', time + 's');
+  IntersectionObserver.observe(content);
+
+  usersMarker.addListener('dragend', (event) => {
+    const position = usersMarker.position;
+    infoWindow.close();
+    infoWindow.setContent(`Pin dropped at: ${position.lat()}, ${position.lng()}`);
+    infoWindow.open(usersMarker.map, usersMarker);
+  });
 }
-
-// initMap(){
-//     <gmp-advanced-marker position="40.76509094238281,-111.84213256835938" title="My location"> </gmp-advanced-marker>
-//           <gmp-advanced-marker position="40.74976348876953,-111.86538696289062" title="My location"> </gmp-advanced-marker>
-//           <gmp-advanced-marker position="40.76545333862305,-111.86117553710938" title="My location"> </gmp-advanced-marker>
-//           <gmp-advanced-marker position="40.760536193847656,-111.87846374511719" title="My location"> </gmp-advanced-marker>
-//           <gmp-advanced-marker position="40.769466400146484,-111.90396118164062" title="My location"> </gmp-advanced-marker>
-// };
-
-// async function initMap() {
-//   // Request needed libraries.
-//   const { Map, InfoWindow } = await google.maps.importLibrary('maps');
-//   const { AdvancedMarkerElement } = await google.maps.importLibrary('marker');
-//   const map = new Map(document.getElementById('map'), {
-//     center: { lat: 40.76103973388672, lng: -111.87799835205078 },
-//     zoom: 14,
-//     mapId: 'DEMO_MAP_ID',
-//   });
-//   const infoWindow = new InfoWindow();
-//   const draggableMarker = new AdvancedMarkerElement({
-//     map,
-//     position: { lat: 37.39094933041195, lng: -122.02503913145092 },
-//     gmpDraggable: true,
-//     title: 'This marker is draggable.',
-//   });
-
-//   draggableMarker.addListener('dragend', (event) => {
-//     const position = draggableMarker.position;
-
-//     infoWindow.close();
-//     infoWindow.setContent(`Pin dropped at: ${position.lat()}, ${position.lng()}`);
-//     infoWindow.open(draggableMarker.map, draggableMarker);
-//   });
-// }
 
 initMap();
 
