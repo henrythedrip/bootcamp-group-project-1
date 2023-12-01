@@ -19,7 +19,9 @@
     </header>
     <main>
       <section class="map-section">
+        <div id="mapContainer" style="height: 100%;"></div>
         <div id="map"></div>
+        </div>
         <div class="map-button">
           <button id="addMeButton" class="button">Add Me</button>
           <div id="modalForm" class="modal">
@@ -31,7 +33,7 @@
                 <input type="email" name="email" id="email" placeholder="Your Email Address" /><br />
                 <input type="textarea" name="bio" id="bio" placeholder="140 character bio" /><br />
                 <div class="buttonRow">
-                  <button type="button" class="button" id="Submit" onclick="store()">Submit</button>
+                  <button type="button" class="button" id="submit" onclick="store();createUsersMarker()">Submit</button>
                 </div>
               </form>
             </div>
