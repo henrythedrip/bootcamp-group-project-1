@@ -121,7 +121,7 @@ async function initMap() {
         map: map,
         position: mapCenterPosition,
         title: localStorage.name,
-        content: usersPinElement,
+        content: usersPinElement.element,
       },
     });
     console.log([libraryOfUsers]);
