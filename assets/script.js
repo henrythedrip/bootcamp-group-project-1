@@ -117,21 +117,23 @@ async function initMap() {
 
 initMap();
 
+// Makes the modal sign up form appear by changing CSS display property.
 btn.addEventListener('click', function (event) {
   event.preventDefault();
   modal.style.display = 'block';
 });
-// When the user clicks on <span> (x), close the modal
+// When the user clicks on <span> (x), close the modal.
 span.onclick = function (event) {
   modal.style.display = 'none';
 };
-// When the user clicks anywhere outside of the modal, close it
+// When the user clicks anywhere outside of the modal, close it.
 window.onclick = function (event) {
   if (event.target == submit) {
     modal.style.display = 'none';
   }
 };
 
+// Where we pass the form input info into a veriable.
 var email = document.getElementById('email');
 var namer = document.getElementById('name');
 var bio = document.getElementById('bio');
@@ -147,18 +149,18 @@ function store() {
 }
 
 var newUser = {
-  name: namer,
+  name: localStorage.namerInput,
   mapInfoWindow: {
-    email: emailInput,
-    bio: bioInput,
+    email: localStorage.emailInput,
+    bio: localStorage.bioInput,
     drink: 'randomly applied drink',
     drinkUrl: 'drink image',
   },
   mapOptions: {
     position: mapCenterPosition,
-    map: map,
+    map: map.map,
     gmpDraggable: true,
-    title: namerInput,
+    title: localStorage.nameInput,
     // content: pinElement.element,
   },
 };
