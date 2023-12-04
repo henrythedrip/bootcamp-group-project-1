@@ -10,8 +10,8 @@ var span = document.getElementsByClassName('close')[0];
 
 // Initialize and add the map
 let map;
-const mapCenterPosition = { lat: 40.76103973388672, lng: -111.87799835205078 };
 // Set the center coordinates in a reusable way.
+const mapCenterPosition = { lat: 40.76103973388672, lng: -111.87799835205078 };
 
 async function initMap() {
   // Request needed libraries.
@@ -33,7 +33,7 @@ async function initMap() {
   });
 
   // Library of Users
-  const userData = [
+  const libraryOfUsers = [
     {
       name: 'Joe Billy',
       mapInfoWindow: {
@@ -106,11 +106,37 @@ async function initMap() {
     },
   ];
 
-  for (let i = 0; i < userData.length + 1; i++) {
-    new AdvancedMarkerElement(userData[i].mapOptions);
+  //Function to add the new user to the array libraryOfUsers
+  function createUsersMarker() {
+    console.log([libraryOfUsers]);
+    libraryOfUsers.push({
+      name: localStorage.name,
+      mapInfoWindow: {
+        email: localStorage.email,
+        bio: localStorage.bio,
+        drink: 'Randomly Applied',
+        drinkUrl: 'Ranomly Applied',
+      },
+      mapOptions: {
+        map: map,
+        position: mapCenterPosition,
+        title: localStorage.name,
+        content: usersPinElement,
+      },
+    });
+    console.log([libraryOfUsers]);
   }
 
-  console.log(userData);
+  // Only run the function if the local storage has content.
+  var usersName = localStorage.getItem('name');
+  if (usersName) {
+    createUsersMarker();
+  } else {
+  }
+
+  for (let i = 0; i < libraryOfUsers.length + 1; i++) {
+    new AdvancedMarkerElement(libraryOfUsers[i].mapOptions);
+  }
 }
 
 initMap();
@@ -146,26 +172,6 @@ function store() {
   var bioInput = usersBio.value;
   localStorage.setItem('bio', bioInput);
 }
-
-//The User's marker creation
-// function createUsersMarker() {
-//   var newUser = {
-//     name: localStorage.name,
-//     mapInfoWindow: {
-//       email: localStorage.email,
-//       bio: localStorage.bio,
-//       drink: 'Randomly Applied',
-//       drinkUrl: 'Ranomly Applied',
-//     },
-//     mapOptions: {
-//       map: map,
-//       position: mapCenterPosition,
-//       title: localStorage.name,
-//     },
-//   };
-//   map.userData.push(newUser);
-//   initMap();
-// }
 
 document.addEventListener('DOMContentLoaded', () => {
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
