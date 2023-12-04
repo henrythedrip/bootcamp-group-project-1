@@ -22,28 +22,28 @@
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
           </a>
-      
+
         </div>
-      
+
         <div id="navbarBasicExample" class="navbar-menu">
           <div class="navbar-end">
             <a href="#map" class="navbar-item" id="nav1">
               Map
             </a>
-      
+
             <a href="#group-members" class="navbar-item" id="nav2">
               Group
             </a>
-      
+
               <a class="navbar-item" id="nav3">
                 More
               </a>
-              
+
                 </a>
-              
+
             </div>
           </div>
-      
+
               </div>
             </div>
           </div>
@@ -52,7 +52,9 @@
     </header>
     <main>
       <section class="map-section">
+        <div id="mapContainer" style="height: 100%;"></div>
         <div id="map"></div>
+        </div>
         <div class="map-button">
           <button id="addMeButton" class="button is-rounded">Add a Pin</button>
           <div id="modalForm" class="modal">
@@ -64,31 +66,31 @@
                   <input class="input is-danger" type="text" id="name" placeholder="Name">
                 </div>
               </div>
-              
+
               <div class="field">
-                
+
               <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
                   <input class="input is-danger" type="email" id="email" placeholder="Email">
-              
+
                 </div>
-              
+
               </div>
-              
+
               <div class="field">
                 <label class="label">Bio</label>
                 <div class="control">
                   <textarea class="textarea is-danger" id="bio" placeholder="Please enter a bio up to 140 character"></textarea>
                 </div>
               </div>
-              
+
               <div class="field is-grouped">
                 <div class="control">
-                  <button class="button" id="Submit" onclick="store()">Submit</button>
+                  <button class="button" id="submit" onclick="store(); initMap()">Submit</button>
                 </div>
               </div>
-            
+
             </div>
           </div>
         </div>
