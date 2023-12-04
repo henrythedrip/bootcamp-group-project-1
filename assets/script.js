@@ -138,32 +138,16 @@ var usersEmail = document.getElementById('email');
 var usersName = document.getElementById('name');
 var usersBio = document.getElementById('bio');
 
+// Where we store the users form input on their local storage.
 function store() {
   localStorage.clear();
-  var emailInput = usersEmail.value;
-  localStorage.setItem('email', emailInput);
   var usersNameInput = usersName.value;
   localStorage.setItem('name', usersNameInput);
+  var emailInput = usersEmail.value;
+  localStorage.setItem('email', emailInput);
   var bioInput = usersBio.value;
   localStorage.setItem('bio', bioInput);
 }
-
-var newUser = {
-  name: localStorage.namerInput,
-  mapInfoWindow: {
-    email: localStorage.emailInput,
-    bio: localStorage.bioInput,
-    drink: 'randomly applied drink',
-    drinkUrl: 'drink image',
-  },
-  mapOptions: {
-    position: mapCenterPosition,
-    map: map.map,
-    gmpDraggable: true,
-    title: localStorage.nameInput,
-    // content: pinElement.element,
-  },
-};
 
 //The User's marker creation
 function createUsersMarker() {
