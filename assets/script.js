@@ -24,8 +24,16 @@ async function initMap() {
     mapId: 'DEMO_MAP_ID',
   });
 
+  // the user's marker styling
+  const usersPinElement = new PinElement({
+    background: '#50C878',
+    borderColor: '#FFF',
+    glyphColor: 'white',
+    scale: 1.5,
+  });
+
   // Library of Users
-  let userData = [
+  const userData = [
     {
       name: 'Joe Billy',
       mapInfoWindow: {
@@ -98,19 +106,9 @@ async function initMap() {
     },
   ];
 
-  const marker1 = new AdvancedMarkerElement(userData[0].mapOptions);
-  const marker2 = new AdvancedMarkerElement(userData[1].mapOptions);
-  const marker3 = new AdvancedMarkerElement(userData[2].mapOptions);
-  const marker4 = new AdvancedMarkerElement(userData[3].mapOptions);
-  const marker5 = new AdvancedMarkerElement(userData[4].mapOptions);
-
-  // the user's marker styling
-  const usersPinElement = new PinElement({
-    background: '#50C878',
-    borderColor: '#FFF',
-    glyphColor: 'white',
-    scale: 1.5,
-  });
+  for (let i = 0; i < userData.length + 1; i++) {
+    new AdvancedMarkerElement(userData[i].mapOptions);
+  }
 
   console.log(userData);
 }
@@ -150,10 +148,24 @@ function store() {
 }
 
 //The User's marker creation
-function createUsersMarker() {
-  userData.push(newUser);
-  initMap();
-}
+// function createUsersMarker() {
+//   var newUser = {
+//     name: localStorage.name,
+//     mapInfoWindow: {
+//       email: localStorage.email,
+//       bio: localStorage.bio,
+//       drink: 'Randomly Applied',
+//       drinkUrl: 'Ranomly Applied',
+//     },
+//     mapOptions: {
+//       map: map,
+//       position: mapCenterPosition,
+//       title: localStorage.name,
+//     },
+//   };
+//   map.userData.push(newUser);
+//   initMap();
+// }
 
 document.addEventListener('DOMContentLoaded', () => {
   const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
