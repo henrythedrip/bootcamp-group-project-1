@@ -134,17 +134,17 @@ window.onclick = function (event) {
 };
 
 // Where we pass the form input info into a veriable.
-var email = document.getElementById('email');
-var namer = document.getElementById('name');
-var bio = document.getElementById('bio');
+var usersEmail = document.getElementById('email');
+var usersName = document.getElementById('name');
+var usersBio = document.getElementById('bio');
 
 function store() {
   localStorage.clear();
-  var emailInput = email.value;
+  var emailInput = usersEmail.value;
   localStorage.setItem('email', emailInput);
-  var namerInput = namer.value;
-  localStorage.setItem('name', namerInput);
-  var bioInput = bio.value;
+  var usersNameInput = usersName.value;
+  localStorage.setItem('name', usersNameInput);
+  var bioInput = usersBio.value;
   localStorage.setItem('bio', bioInput);
 }
 
