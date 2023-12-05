@@ -180,9 +180,37 @@ input {
   cursor: pointer;
 }
 
-footer {
+.about-container {
+  background-color: #aaa;
+  border-top: #f14668 solid 2px;
+  justify-content: center;
+  display: flex;
+  color: #000;
+  
+  
+  
+
+}
+
+
+.about-p {
+  display: flex;
+  justify-content: center;
   background-color: #aaa;
   color: #000;
+  padding-bottom: .5rem;
+}
+
+.about-desc {
+  max-width: 750px;
+  text-align: center;
+
+}
+
+footer {
+  background-color: #414143;
+  color: #fff;
+  border-bottom: #f14668 solid 2px;
 }
 
 footer h2 {
