@@ -15,7 +15,7 @@ const mapCenterPosition = { lat: 40.76103973388672, lng: -111.87799835205078 };
 
 async function initMap() {
   // Request needed libraries.
-  const { Map } = await google.maps.importLibrary('maps');
+  const { Map, InfoWindow } = await google.maps.importLibrary('maps');
   const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary('marker');
   //map basics
   map = new Map(document.getElementById('map'), {
@@ -29,7 +29,8 @@ async function initMap() {
     background: '#50C878',
     borderColor: '#FFF',
     glyphColor: 'white',
-    scale: 1.5,
+    glyph: 'YOU!',
+    scale: 2,
   });
 
   // Library of Users
@@ -45,7 +46,7 @@ async function initMap() {
       mapOptions: {
         map: map,
         position: { lat: 40.76509094238281, lng: -111.84213256835938 },
-        title: 'Marker 1',
+        title: 'Joe Billy',
       },
     },
     {
@@ -59,7 +60,7 @@ async function initMap() {
       mapOptions: {
         map: map,
         position: { lat: 40.74976348876953, lng: -111.86538696289062 },
-        title: 'Marker 2',
+        title: 'Big Stepper',
       },
     },
     {
@@ -73,7 +74,7 @@ async function initMap() {
       mapOptions: {
         map: map,
         position: { lat: 40.76545333862305, lng: -111.86117553710938 },
-        title: 'Marker 3',
+        title: 'Lisa Simpleton',
       },
     },
     {
@@ -87,7 +88,7 @@ async function initMap() {
       mapOptions: {
         map: map,
         position: { lat: 40.760536193847656, lng: -111.89846374511719 },
-        title: 'Marker 4',
+        title: 'Betty Brown',
       },
     },
     {
@@ -101,10 +102,11 @@ async function initMap() {
       mapOptions: {
         map: map,
         position: { lat: 40.76536193847656, lng: -111.8846374511719 },
-        title: 'Marker 5',
+        title: 'Richard Guu',
       },
     },
   ];
+  // const infowindow = new InfoWindow(libraryOfUsers[i].mapInfoWindow);
 
   //Function to add the new user to the array libraryOfUsers
   function createUsersMarker() {
@@ -119,9 +121,14 @@ async function initMap() {
       },
       mapOptions: {
         map: map,
+        gmpDraggable: true,
         position: mapCenterPosition,
         title: localStorage.name,
         content: usersPinElement.element,
+      },
+      infoWindowOptions: {
+        content: localStorage.bio,
+        ariaLabel: localStorage.name,
       },
     });
     console.log([libraryOfUsers]);
@@ -134,8 +141,26 @@ async function initMap() {
   } else {
   }
 
+  // Loops through the LibraryOfUsers and creates markers and infowindows for each user.
   for (let i = 0; i < libraryOfUsers.length + 1; i++) {
-    new AdvancedMarkerElement(libraryOfUsers[i].mapOptions);
+    const marker = new AdvancedMarkerElement(libraryOfUsers[i].mapOptions);
+    const infowindow = new InfoWindow(libraryOfUsers[i].mapInfoWindow);
+    console.log(infowindow);
+    // var email = infowindow.email;
+    // var bio = infowindow.bio;
+    // var drink = infowindow.drink;
+    var drinkImg = infowindow.drinkUrl;
+    // console.log(drinkImg);
+    // Function that creates const that takes the properties of the infoWindowOptions and puts them in a string.
+    const contentString = `<img src="${drinkImg}">`;
+    marker.addListener('click', () => {
+      infowindow.setContent(contentString);
+      infowindow.open({
+        content: contentString,
+        anchor: marker,
+        map,
+      });
+    });
   }
 }
 
