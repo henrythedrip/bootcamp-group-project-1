@@ -129,8 +129,8 @@ async function initMap() {
         return data;
       });
     libraryOfUsers.push({
-      name: localStorage.name,
       mapInfoWindow: {
+        name: localStorage.name,
         email: localStorage.email,
         bio: localStorage.bio,
         drink: randomdrink.drinks[0].strDrink,
