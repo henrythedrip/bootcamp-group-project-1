@@ -116,15 +116,25 @@ async function initMap() {
   // const infowindow = new InfoWindow(libraryOfUsers[i].mapInfoWindow);
 
   //Function to add the new user to the array libraryOfUsers
-  function createUsersMarker() {
-    console.log([libraryOfUsers]);
+  async function createUsersMarker() {
+    const getRandomdrink = await fetch(
+      "https://www.thecocktaildb.com/api/json/v1/1/random.php"
+    );
+    // getRandomdrink();
+    const randomdrink = await getRandomdrink
+      .json()
+
+      .then((data) => {
+        console.log(data);
+        return data;
+      });
     libraryOfUsers.push({
       name: localStorage.name,
       mapInfoWindow: {
         email: localStorage.email,
         bio: localStorage.bio,
-        drink: "Randomly Applied",
-        drinkUrl: "Ranomly Applied",
+        drink: randomdrink.drinks[0].strDrink,
+        drinkUrl: randomdrink.drinks[0].strDrinkThumb,
       },
       mapOptions: {
         map: map,
@@ -138,18 +148,17 @@ async function initMap() {
         ariaLabel: localStorage.name,
       },
     });
-    console.log([libraryOfUsers]);
   }
 
   // Only run the function if the local storage has content.
   var usersName = localStorage.getItem("name");
   if (usersName) {
-    createUsersMarker();
+    await createUsersMarker();
   } else {
   }
 
   // Loops through the LibraryOfUsers and creates markers and infowindows for each user.
-  for (let i = 0; i < libraryOfUsers.length + 1; i++) {
+  for (let i = 0; i < libraryOfUsers.length; i++) {
     const marker = new AdvancedMarkerElement(libraryOfUsers[i].mapOptions);
     const infowindow = new InfoWindow(libraryOfUsers[i].mapInfoWindow);
     console.log(infowindow);
@@ -158,7 +167,6 @@ async function initMap() {
     var bio = infowindow.bio;
     var drink = infowindow.drink;
     var drinkImg = infowindow.drinkUrl;
-    // console.log(drinkImg);
     // Function that creates const that takes the properties of the infoWindowOptions and puts them in a string.
     const contentString = `<section class="card-main"><h3 class="card-name">${name}</h3><div class="email-mailto"><a href="mailto:${email}" class="card-email"<p>${email}</p></a></div><p class="card-bio">${bio}</p> <p class="card-fav-drink">Their Drink:</p><p class="card-drink"> ${drink}</p><div class="card-img-container"><img src="${drinkImg}" class="card-img" width="100" height="100"></div></section>
     `;
