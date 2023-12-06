@@ -9,11 +9,15 @@ This program was designed as coursework for the University of Utah Coding Bootca
 
 ## Group Members
 
-Henry Thomas
-Mason McNeil
-Maxwell Kaufman
-Paul Orozco
+Henry Thomas,
+Mason McNeil,
+Maxwell Kaufman,
+Paul Orozco,
 Ryan Darton
+
+## Link to Presentation
+
+https://docs.google.com/presentation/d/1bjaVw5uCqs-qMuqJp7cKhIawOSmNmZHLMkxNLoH8aE0/edit#slide=id.p
 
 ## Resources
 
