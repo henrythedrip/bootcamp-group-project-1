@@ -1,5 +1,7 @@
 # bootcamp-group-project-1
 
+<img width="1398" alt="Screenshot 2023-12-05 at 6 21 19 PM" src="https://github.com/henrythedrip/bootcamp-group-project-1/assets/146283648/0b3b0297-48c6-49b3-923a-33f3dba2b5c4">
+
 ## Link to Website
 
 https://henrythedrip.github.io/bootcamp-group-project-1/
