@@ -1,5 +1,9 @@
 # bootcamp-group-project-1
 
+## Link to Website
+
+https://henrythedrip.github.io/bootcamp-group-project-1/
+
 ## Description of product
 
 This application is designed as a "friend-finder" for people to find other drinkers around them. 
