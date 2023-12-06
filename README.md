@@ -23,6 +23,10 @@ Ryan Darton
 
 https://docs.google.com/presentation/d/1bjaVw5uCqs-qMuqJp7cKhIawOSmNmZHLMkxNLoH8aE0/edit#slide=id.p
 
+## Rough draft of our ideas contained here
+
+https://docs.google.com/presentation/d/1rCjdeifeY-2wSoEgs2X8pEQsTCfpz3-nVRR93MVFQj8/edit#slide=id.p
+
 ## Resources
 
 Info Windows 
