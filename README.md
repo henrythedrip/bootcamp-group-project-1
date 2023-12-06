@@ -43,6 +43,12 @@ https://developers.google.com/maps/documentation/javascript/web-components/overv
 Google Maps API
 https://console.cloud.google.com/google/maps-apis/home?project=elegant-hope-406201
 
+Markers
+https://developers.google.com/maps/documentation/javascript/markers
+
+Local Storage
+https://stackoverflow.com/questions/17087636/how-to-save-data-from-a-form-with-html5-local-storage
+
 Randomized Drinks
 https://www.thecocktaildb.com/api.php
 
