@@ -52,6 +52,9 @@ https://stackoverflow.com/questions/17087636/how-to-save-data-from-a-form-with-h
 Randomized Drinks
 https://www.thecocktaildb.com/api.php
 
+Setting up Google API's
+https://developers.google.com/maps/documentation/javascript/cloud-setup
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
